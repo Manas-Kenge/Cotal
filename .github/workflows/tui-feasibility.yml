@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - probe/tui-feasibility-*
+    paths:
+      - '.github/workflows/tui-feasibility.yml'
+      - 'scripts/tui-feasibility/**/*.mjs'
+      - 'scripts/tui-feasibility/renderer/package*.json'
 
 permissions:
   contents: read
@@ -28,7 +32,6 @@ jobs:
       run:
         shell: bash
     env:
-      GOBIN: ${{ runner.temp }}/tui-feasibility-bin
       GOPROXY: https://proxy.golang.org
       GOSUMDB: sum.golang.org
       GOTOOLCHAIN: local
@@ -94,6 +97,8 @@ jobs:
         run: |
           npm ci --prefix scripts/tui-feasibility/renderer --ignore-scripts --no-audit --no-fund 2>&1 | tee tui-feasibility-proof/renderer-install.log
       - name: Build checksum-verified NATS server module
+        env:
+          GOBIN: ${{ runner.temp }}/tui-feasibility-bin
         run: |
           go install github.com/nats-io/nats-server/v2@v2.12.12 2>&1 | tee tui-feasibility-proof/nats-install.log
           node --input-type=module <<'NODE'
