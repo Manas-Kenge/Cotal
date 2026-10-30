@@ -24,14 +24,16 @@ const report = { sourceHead: spawnSync("git", ["rev-parse", "HEAD"], { cwd: repo
 const errorRecord = (error) => ({ name: error?.name ?? typeof error, message: error?.message ?? String(error), code: error?.code ?? null, stack: error?.stack ?? null, ...(error?.errors ? { errors: error.errors.map(errorRecord) } : {}) });
 const redact = (text) => text.replace(/([#?&]t=)[^\s&#"']+/g, "$1<redacted>").replace(/Bearer\s+[A-Za-z0-9._-]+/g, "Bearer <redacted>");
 
-process.once("exit", () => {
+function recordInterrupted(force = false) {
   closing = true;
-  if (childProcesses.size === 0) return;
-  writeFileSync(join(output, "interrupted.json"), JSON.stringify({ scratchRetained: scratch, children: [...childProcesses].map((child) => child.pid), cleanup: "SIGKILL sent through each retained child handle; interrupted run is not a pass" }));
+  if (!force && childProcesses.size === 0) return;
+  writeFileSync(join(output, "interrupted.json"), JSON.stringify({ scratchRetained: scratch, children: [...childProcesses].map((child) => child.pid), brokers: brokers.map(({ child }) => child.pid), cleanup: "retained child handles registered with signal reaper; interrupted run is not a pass" }));
   for (const child of childProcesses) {
     try { child.kill("SIGKILL"); } catch {}
   }
-});
+}
+process.once("exit", () => recordInterrupted());
+for (const signal of ["SIGINT", "SIGTERM", "SIGHUP"]) process.once(signal, () => recordInterrupted(true));
 
 function runProcess(executable, args, options = {}) {
   if (closing) throw new Error("the proof controller has fenced new process launches");
