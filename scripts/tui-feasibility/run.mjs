@@ -159,6 +159,7 @@ try {
     const extensionEntry = join(extensionDir, "index.mjs");
     await writeFile(extensionEntry, `import { registry } from '@cotal-ai/core'; registry.register({kind:'feasibility',name:'external-proof',value:${JSON.stringify(mode.mode)}}); export {registry};`);
     const resultFile = join(output, `${mode.mode}.json`);
+    await rm(resultFile, { force: true });
     const configPath = join(runRoot, "config.json");
     const whoReady = join(runRoot, "who-ready");
     const whoResult = join(runRoot, "who-result.json");
