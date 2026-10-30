@@ -15,10 +15,12 @@ try {
   stage = "run-installed-host";
   await host.run(config, { renderNative });
 } catch (error) {
+  let previous;
+  try { previous = JSON.parse(readFileSync(config.resultFile, "utf8")); } catch {}
   writeFileSync(config.resultFile, `${JSON.stringify({
     sourceHead: config.sourceHead, mode: config.mode, platform: process.platform, arch: process.arch,
     node: process.versions.node, bun: process.versions.bun ?? null, executable: process.execPath,
-    entries: [{ id: "installed-host-bootstrap", status: "failed", stage, error: { name: error.name, message: error.message, code: error.code ?? null, stack: error.stack ?? null } }],
+    entries: [...(previous?.entries ?? []), { id: stage === "import-installed-host" ? "installed-host-bootstrap" : "installed-host-execution", status: "failed", stage, error: { name: error.name, message: error.message, code: error.code ?? null, stack: error.stack ?? null } }],
   }, null, 2)}\n`);
   console.error(`${stage}: ${error.message}`);
   process.exitCode = 1;

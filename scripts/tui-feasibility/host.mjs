@@ -12,6 +12,7 @@ function errorRecord(error) {
 
 export async function run(config, ui) {
   const results = [];
+  const result = { sourceHead: config.sourceHead, mode: config.mode, platform: process.platform, arch: process.arch, node: process.versions.node, bun: process.versions.bun ?? null, executable: process.execPath, entries: results };
   const record = async (id, test) => {
     const startedAt = new Date().toISOString();
     try {
@@ -21,6 +22,7 @@ export async function run(config, ui) {
     } catch (error) {
       results.push({ id, status: "failed", startedAt, error: errorRecord(error) });
     }
+    await writeFile(config.resultFile, `${JSON.stringify(result, null, 2)}\n`);
   };
   const ctx = { ...config, core, workspace, case: record };
   ctx.onProtocolReady = async () => {
@@ -68,16 +70,6 @@ export async function run(config, ui) {
   });
   const { runProtocolCases } = await import(pathToFileURL(join(config.repoRoot, "scripts/tui-feasibility/protocol.mjs")).href);
   await runProtocolCases(ctx);
-  const result = {
-    sourceHead: config.sourceHead,
-    mode: config.mode,
-    platform: process.platform,
-    arch: process.arch,
-    node: process.versions.node,
-    bun: process.versions.bun ?? null,
-    executable: process.execPath,
-    entries: results,
-  };
   await writeFile(config.resultFile, `${JSON.stringify(result, null, 2)}\n`);
   console.log(`TUI_FEASIBILITY_RESULT ${config.mode} ${results.length}`);
   process.exitCode = results.some((entry) => entry.status === "failed") ? 1 : 0;

@@ -59,7 +59,7 @@ async function startBroker(args, storeDir) {
   child.stderr.on("data", (chunk) => { log += chunk; });
   const broker = { child, release: () => {}, log: () => redact(log) };
   brokers.push(broker);
-  broker.release = teardownOnSignal(child, storeDir);
+  broker.release = teardownOnSignal(child);
   await spawned;
   return child;
 }
