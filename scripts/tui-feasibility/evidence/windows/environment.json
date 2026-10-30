@@ -1,0 +1,14 @@
+{
+  "source": "89fabeb305acca5c7d2b34be7b0cc8cf4342bf82",
+  "run": "41023604288",
+  "attempt": "1",
+  "runner": "Windows",
+  "runnerArch": "X64",
+  "image": "win25-vs2026",
+  "imageVersion": "20261021.278.1",
+  "platform": "win32",
+  "arch": "x64",
+  "osRelease": "10.0.26100",
+  "node": "v22.23.4",
+  "workspaceNative": "success"
+}

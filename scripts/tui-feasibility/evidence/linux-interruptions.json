@@ -1,0 +1,60 @@
+[
+  {
+    "phase": "compile",
+    "controllerExit": -15,
+    "target": {
+      "pid": 136791,
+      "command": "bun build /tmp/cotal-tui-feasibility-worktree/scripts/tui-feasibility/entry.mjs --compile --outfile /tmp/cotal-smoke-broker-136714-tui-SoBzsP/installation/node_modules/@cotal-ai/tui-linux-x64/bin/cotal-proof --define process.env.OPENTUI_LIBC=\"glibc\" "
+    },
+    "observedChildren": {
+      "136725": "git rev-parse HEAD ",
+      "136727": "nats-server -c /tmp/cotal-smoke-broker-136714-tui-SoBzsP/protocol-0/server.conf ",
+      "136732": "/proc/136727/exe --version ",
+      "136747": "nats-server -c /tmp/cotal-smoke-broker-136714-tui-SoBzsP/protocol-1/server.conf ",
+      "136771": "nats-server -js -a 127.0.0.1 -p 34297 -sd /tmp/cotal-smoke-broker-136714-tui-SoBzsP/manager/js ",
+      "136791": "bun build /tmp/cotal-tui-feasibility-worktree/scripts/tui-feasibility/entry.mjs --compile --outfile /tmp/cotal-smoke-broker-136714-tui-SoBzsP/installation/node_modules/@cotal-ai/tui-linux-x64/bin/cotal-proof --define process.env.OPENTUI_LIBC=\"glibc\" "
+    },
+    "liveChildrenAfterExit": [],
+    "scratchRemovedAfterControllerAndChildrenExited": true
+  },
+  {
+    "phase": "candidate",
+    "controllerExit": -15,
+    "target": {
+      "pid": 136897,
+      "command": "/home/manas/.local/share/mise/installs/node/26.7.0/bin/node --experimental-ffi /tmp/cotal-tui-feasibility-worktree/scripts/tui-feasibility/entry.mjs /tmp/cotal-smoke-broker-136802-tui-3AeDLz/installation/node_modules/cotal-ai /tmp/cotal-smoke-broker-136802-tui-3AeDLz/node/config.json "
+    },
+    "observedChildren": {
+      "136815": "nats-server -c /tmp/cotal-smoke-broker-136802-tui-3AeDLz/protocol-0/server.conf ",
+      "136839": "nats-server -c /tmp/cotal-smoke-broker-136802-tui-3AeDLz/protocol-1/server.conf ",
+      "136844": "",
+      "136865": "nats-server -js -a 127.0.0.1 -p 37317 -sd /tmp/cotal-smoke-broker-136802-tui-3AeDLz/manager/js ",
+      "136874": "",
+      "136883": "",
+      "136897": "/home/manas/.local/share/mise/installs/node/26.7.0/bin/node --experimental-ffi /tmp/cotal-tui-feasibility-worktree/scripts/tui-feasibility/entry.mjs /tmp/cotal-smoke-broker-136802-tui-3AeDLz/installation/node_modules/cotal-ai /tmp/cotal-smoke-broker-136802-tui-3AeDLz/node/config.json "
+    },
+    "liveChildrenAfterExit": [],
+    "scratchRemovedAfterControllerAndChildrenExited": true
+  },
+  {
+    "phase": "observer",
+    "controllerExit": -15,
+    "target": {
+      "pid": 137021,
+      "command": "/home/manas/.local/share/mise/installs/node/26.7.0/bin/node /tmp/cotal-tui-feasibility-worktree/bin/dist/cotal.js who --all --json --space tui-feas-e37a0636 --server nats://127.0.0.1:36003 --creds /tmp/cotal-smoke-broker-136904-tui-x7B60p/protocol-0/observer.creds "
+    },
+    "observedChildren": {
+      "136917": "nats-server -c /tmp/cotal-smoke-broker-136904-tui-x7B60p/protocol-0/server.conf ",
+      "136941": "nats-server -c /tmp/cotal-smoke-broker-136904-tui-x7B60p/protocol-1/server.conf ",
+      "136964": "nats-server -js -a 127.0.0.1 -p 39221 -sd /tmp/cotal-smoke-broker-136904-tui-x7B60p/manager/js ",
+      "136974": "",
+      "136985": "",
+      "137000": "/home/manas/.local/share/mise/installs/node/26.7.0/bin/node --experimental-ffi /tmp/cotal-tui-feasibility-worktree/scripts/tui-feasibility/entry.mjs /tmp/cotal-smoke-broker-136904-tui-x7B60p/installation/node_modules/cotal-ai /tmp/cotal-smoke-broker-136904-tui-x7B60p/node/config.json ",
+      "137006": "/proc/137000/exe --version ",
+      "137021": "/home/manas/.local/share/mise/installs/node/26.7.0/bin/node /tmp/cotal-tui-feasibility-worktree/bin/dist/cotal.js who --all --json --space tui-feas-e37a0636 --server nats://127.0.0.1:36003 --creds /tmp/cotal-smoke-broker-136904-tui-x7B60p/protocol-0/observer.creds ",
+      "137026": "/proc/137021/exe --version "
+    },
+    "liveChildrenAfterExit": [],
+    "scratchRemovedAfterControllerAndChildrenExited": true
+  }
+]

@@ -1,0 +1,14 @@
+{
+  "source": "89fabeb305acca5c7d2b34be7b0cc8cf4342bf82",
+  "run": "41023604288",
+  "attempt": "1",
+  "runner": "macOS",
+  "runnerArch": "ARM64",
+  "image": "macos26",
+  "imageVersion": "20261021.0445.8",
+  "platform": "darwin",
+  "arch": "arm64",
+  "osRelease": "25.6.0",
+  "node": "v22.23.4",
+  "workspaceNative": "success"
+}

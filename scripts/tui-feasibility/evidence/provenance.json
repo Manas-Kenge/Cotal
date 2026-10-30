@@ -1,0 +1,74 @@
+{
+  "comparisonSource": "89fabeb305acca5c7d2b34be7b0cc8cf4342bf82",
+  "productBase": "dd31f5de0e90ee16ddc150254a78ade420d4f032",
+  "localNode26Source": "89fabeb305acca5c7d2b34be7b0cc8cf4342bf82",
+  "localLoaderControlSource": "89fabeb305acca5c7d2b34be7b0cc8cf4342bf82",
+  "linuxInterruptionSource": "c6c16339d47cead01209ca60c1820e6be604bc49",
+  "interruptionLimit": "Linux SIGTERM only, before result-file reset was added; lifecycle code unchanged",
+  "artifacts": [
+    {
+      "id": 12962921550,
+      "name": "workspace-native-x64",
+      "size_in_bytes": 73576,
+      "digest": "sha256:d7d411c749775ad18f90a275e5f45db6b7fe92f1f6975dc6c90eda1f112be78e",
+      "expired": false,
+      "created_at": "2026-10-30T08:01:41Z",
+      "expires_at": "2027-01-28T08:00:45Z",
+      "workflow_run": {
+        "id": 41023604288,
+        "repository_id": 1429283522,
+        "head_repository_id": 1429283522,
+        "head_branch": "probe/tui-feasibility-20261030",
+        "head_sha": "89fabeb305acca5c7d2b34be7b0cc8cf4342bf82"
+      }
+    },
+    {
+      "id": 12962578387,
+      "name": "tui-feasibility-ubuntu-latest-1",
+      "size_in_bytes": 20843,
+      "digest": "sha256:7293bfd7ce056c2e8bac64baf02cf192c2f3a3e468c19b21fcb778449f513748",
+      "expired": false,
+      "created_at": "2026-10-30T08:04:00Z",
+      "expires_at": "2026-11-13T08:03:59Z",
+      "workflow_run": {
+        "id": 41023604288,
+        "repository_id": 1429283522,
+        "head_repository_id": 1429283522,
+        "head_branch": "probe/tui-feasibility-20261030",
+        "head_sha": "89fabeb305acca5c7d2b34be7b0cc8cf4342bf82"
+      }
+    },
+    {
+      "id": 12962424240,
+      "name": "tui-feasibility-macos-latest-1",
+      "size_in_bytes": 21278,
+      "digest": "sha256:6888173e240c1c5706e86aaf208a297be50b11a3e2cc4abb1dd1c1bbd6e0734c",
+      "expired": false,
+      "created_at": "2026-10-30T08:04:39Z",
+      "expires_at": "2026-11-13T08:04:38Z",
+      "workflow_run": {
+        "id": 41023604288,
+        "repository_id": 1429283522,
+        "head_repository_id": 1429283522,
+        "head_branch": "probe/tui-feasibility-20261030",
+        "head_sha": "89fabeb305acca5c7d2b34be7b0cc8cf4342bf82"
+      }
+    },
+    {
+      "id": 12961874644,
+      "name": "tui-feasibility-windows-latest-1",
+      "size_in_bytes": 21852,
+      "digest": "sha256:f3c1f1ddc6e5db0d6158e26f87017a6cb84c5a1f9274859d1ee75df60796671e",
+      "expired": false,
+      "created_at": "2026-10-30T08:05:50Z",
+      "expires_at": "2026-11-13T08:05:49Z",
+      "workflow_run": {
+        "id": 41023604288,
+        "repository_id": 1429283522,
+        "head_repository_id": 1429283522,
+        "head_branch": "probe/tui-feasibility-20261030",
+        "head_sha": "89fabeb305acca5c7d2b34be7b0cc8cf4342bf82"
+      }
+    }
+  ]
+}

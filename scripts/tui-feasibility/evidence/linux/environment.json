@@ -1,0 +1,14 @@
+{
+  "source": "89fabeb305acca5c7d2b34be7b0cc8cf4342bf82",
+  "run": "41023604288",
+  "attempt": "1",
+  "runner": "Linux",
+  "runnerArch": "X64",
+  "image": "ubuntu24",
+  "imageVersion": "20261026.354.1",
+  "platform": "linux",
+  "arch": "x64",
+  "osRelease": "7.0.0-1017-azure",
+  "node": "v22.23.4",
+  "workspaceNative": "success"
+}

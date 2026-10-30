@@ -1,0 +1,606 @@
+{
+  "sourceHead": "89fabeb305acca5c7d2b34be7b0cc8cf4342bf82",
+  "platform": "win32",
+  "arch": "x64",
+  "startedAt": "2026-10-30T08:05:09.079Z",
+  "runs": [
+    {
+      "mode": "node",
+      "process": {
+        "code": 1,
+        "signal": null,
+        "stdout": "TUI_FEASIBILITY_RESULT node 20\n",
+        "stderr": "! manager boot: no connector available - spawn and launch stay on this instance rail only so a sibling that can launch them can take the class queue\n! schema: compile took ~109ms of process CPU (SPEC 2458 reference budget 100ms; 39ms elapsed). Approximate - process-wide CPU includes JIT/Worker threads. Not a refusal, and no schema-size ceiling stands behind it: registration is bounded structurally (document/closure bytes, depth, ref-chain, pattern length, admitted vocabulary).\n! schema: compile took ~109ms of process CPU (SPEC 2458 reference budget 100ms; 34ms elapsed). Approximate - process-wide CPU includes JIT/Worker threads. Not a refusal, and no schema-size ceiling stands behind it: registration is bounded structurally (document/closure bytes, depth, ref-chain, pattern length, admitted vocabulary).\nmanager service endpoint registered: manager/6fiu9fb88cms9gez63wrfit4yfvx246 (epoch 0, registrationRevision 2)\nmanager goal-writer standing (endpoint manager, open/bare)\nmanager session plane standing (endpoint manager, epoch 0, open/bare)\n✓ deregistered manager instance 6fiu9fb88cms9gez63wrfit4yfvx246 from the manager service registry (spec revision 2)\n"
+      },
+      "result": {
+        "sourceHead": "89fabeb305acca5c7d2b34be7b0cc8cf4342bf82",
+        "mode": "node",
+        "platform": "win32",
+        "arch": "x64",
+        "node": "22.23.4",
+        "bun": null,
+        "executable": "C:\\hostedtoolcache\\windows\\node\\22.23.4\\x64\\node.exe",
+        "entries": [
+          {
+            "id": "installed-core-workspace-import",
+            "status": "passed",
+            "startedAt": "2026-10-30T08:05:18.434Z",
+            "observation": {
+              "core": "function",
+              "workspace": "function"
+            }
+          },
+          {
+            "id": "installed-extension-single-registry",
+            "status": "passed",
+            "startedAt": "2026-10-30T08:05:18.437Z",
+            "observation": {
+              "sameRegistryObject": true,
+              "registrationVisible": true,
+              "fixture": "separately imported local package with a core peer dependency; not the operator extension installer"
+            }
+          },
+          {
+            "id": "offline-machine-records",
+            "status": "passed",
+            "startedAt": "2026-10-30T08:05:18.440Z",
+            "observation": {
+              "registered": 2,
+              "prepared": 1,
+              "damaged": 1,
+              "brokerDialRequired": false,
+              "source": "real workspace registries, deliberately unreachable broker addresses"
+            }
+          },
+          {
+            "id": "opentui-native-offline-frame",
+            "status": "failed",
+            "startedAt": "2026-10-30T08:05:18.566Z",
+            "error": {
+              "name": "Error",
+              "message": "Failed to initialize OpenTUI render library: OpenTUI native FFI is not available for this runtime yet",
+              "code": null,
+              "stack": "Error: Failed to initialize OpenTUI render library: OpenTUI native FFI is not available for this runtime yet\n    at resolveRenderLib2 (file:///D:/a/Cotal/Cotal/scripts/tui-feasibility/renderer/node_modules/@opentui/core/chunk-node-y0w0hq5m.js:12069:13)\n    at <instance_members_initializer> (file:///D:/a/Cotal/Cotal/scripts/tui-feasibility/renderer/node_modules/@opentui/core/chunk-node-q5ccgbk5.js:16687:9)\n    at new NativeSession2 (file:///D:/a/Cotal/Cotal/scripts/tui-feasibility/renderer/node_modules/@opentui/core/chunk-node-q5ccgbk5.js:16717:14)\n    at new CliRenderer2 (file:///D:/a/Cotal/Cotal/scripts/tui-feasibility/renderer/node_modules/@opentui/core/chunk-node-q5ccgbk5.js:21562:40)\n    at setupTestRenderer (file:///D:/a/Cotal/Cotal/scripts/tui-feasibility/renderer/node_modules/@opentui/core/testing.js:726:10)\n    at createTestRenderer (file:///D:/a/Cotal/Cotal/scripts/tui-feasibility/renderer/node_modules/@opentui/core/testing.js:583:26)\n    at Object.renderNative (file:///D:/a/Cotal/Cotal/scripts/tui-feasibility/renderer/probe.mjs:6:22)\n    at async record (file:///C:/Users/RUNNER%7E1/AppData/Local/Temp/cotal-smoke-broker-7164-tui-Jiep2H/installation/node_modules/cotal-ai/dist/tui-host.mjs:19:27)\n    at async Module.run (file:///C:/Users/RUNNER%7E1/AppData/Local/Temp/cotal-smoke-broker-7164-tui-Jiep2H/installation/node_modules/cotal-ai/dist/tui-host.mjs:64:3)\n    at async file:///D:/a/Cotal/Cotal/scripts/tui-feasibility/entry.mjs:16:3"
+            }
+          },
+          {
+            "id": "native-process-identity",
+            "status": "passed",
+            "startedAt": "2026-10-30T08:05:18.650Z",
+            "observation": {
+              "platform": "win32",
+              "arch": "x64",
+              "identity": {
+                "pid": 5720,
+                "token": "134378211177377267"
+              },
+              "mechanism": "shipped creation.node through defaultStartToken"
+            }
+          },
+          {
+            "id": "native-windows-creation-binding",
+            "status": "passed",
+            "startedAt": "2026-10-30T08:05:18.653Z",
+            "observation": {
+              "platform": "win32",
+              "arch": "x64",
+              "outcome": "loaded",
+              "loader": "packages/workspace/dist/win32-process.js",
+              "binding": "packages/workspace/build/Release/win32-x64/creation.node",
+              "token": "134378211177377267"
+            }
+          },
+          {
+            "id": "native-node-pty-import",
+            "status": "passed",
+            "startedAt": "2026-10-30T08:05:18.654Z",
+            "observation": {
+              "platform": "win32",
+              "arch": "x64",
+              "modulePath": "D:\\a\\Cotal\\Cotal\\node_modules\\.pnpm\\@lydell+node-pty@1.2.0-beta.12\\node_modules\\@lydell\\node-pty\\index.js",
+              "outcome": "imported",
+              "spawnedSeat": false
+            }
+          },
+          {
+            "id": "native-manager-library-import",
+            "status": "passed",
+            "startedAt": "2026-10-30T08:05:18.662Z",
+            "observation": {
+              "outcome": "imported",
+              "path": "implementations/manager/dist/index.js"
+            }
+          },
+          {
+            "id": "native-pty-runtime-construction",
+            "status": "passed",
+            "startedAt": "2026-10-30T08:05:18.835Z",
+            "observation": {
+              "outcome": "constructed",
+              "kind": "pty",
+              "spawnedSeat": false
+            }
+          },
+          {
+            "id": "native-process-service-host",
+            "status": "unsupported",
+            "startedAt": "2026-10-30T08:05:18.836Z",
+            "observation": {
+              "platform": "win32",
+              "arch": "x64",
+              "outcome": "existing-restriction",
+              "error": {
+                "name": "CommandFailure",
+                "message": "this process-service driver currently requires Linux machine/boot identity; another platform is not silently treated as Linux",
+                "code": "UNSUPPORTED",
+                "stack": "CommandFailure: this process-service driver currently requires Linux machine/boot identity; another platform is not silently treated as Linux\n    at processServiceHost (file:///C:/Users/RUNNER%7E1/AppData/Local/Temp/cotal-smoke-broker-7164-tui-Jiep2H/installation/node_modules/cotal-ai/node_modules/@cotal-ai/cli/dist/lib/service-instances.js:40:15)\n    at file:///D:/a/Cotal/Cotal/scripts/tui-feasibility/native.mjs:96:20\n    at async Object.record [as case] (file:///C:/Users/RUNNER%7E1/AppData/Local/Temp/cotal-smoke-broker-7164-tui-Jiep2H/installation/node_modules/cotal-ai/dist/tui-host.mjs:19:27)\n    at async runNativeCases (file:///D:/a/Cotal/Cotal/scripts/tui-feasibility/native.mjs:93:3)\n    at async Module.run (file:///C:/Users/RUNNER%7E1/AppData/Local/Temp/cotal-smoke-broker-7164-tui-Jiep2H/installation/node_modules/cotal-ai/dist/tui-host.mjs:66:3)\n    at async file:///D:/a/Cotal/Cotal/scripts/tui-feasibility/entry.mjs:16:3"
+              }
+            }
+          },
+          {
+            "id": "native-detached-manager-entry-guard",
+            "status": "unsupported",
+            "startedAt": "2026-10-30T08:05:18.842Z",
+            "observation": {
+              "outcome": "existing-restriction",
+              "entry": "D:\\a\\Cotal\\Cotal\\scripts\\tui-feasibility\\entry.mjs",
+              "error": {
+                "name": "Error",
+                "message": "refusing to re-exec this process as `cotal`: it was started from D:\\a\\Cotal\\Cotal\\scripts\\tui-feasibility\\entry.mjs, which is not the CLI's own entry (`bin/cotal.ts` in a checkout, or the `cotal-ai` package's `dist/cotal.js`, directly or through a symlink).\nA child spawned from that entry re-runs it with a cotal subcommand appended, which it does not read; if that file reaches this call on load, every child spawns the next one.\nNEXT: reach this through the `cotal` binary. A fixture that means to start a real daemon points `process.argv[1]` at the cotal entry first; one that does not must not call ensureManager, ensureDelivery, ensureControlPlane or ensureAuthService.",
+                "code": null,
+                "stack": "Error: refusing to re-exec this process as `cotal`: it was started from D:\\a\\Cotal\\Cotal\\scripts\\tui-feasibility\\entry.mjs, which is not the CLI's own entry (`bin/cotal.ts` in a checkout, or the `cotal-ai` package's `dist/cotal.js`, directly or through a symlink).\nA child spawned from that entry re-runs it with a cotal subcommand appended, which it does not read; if that file reaches this call on load, every child spawns the next one.\nNEXT: reach this through the `cotal` binary. A fixture that means to start a real daemon points `process.argv[1]` at the cotal entry first; one that does not must not call ensureManager, ensureDelivery, ensureControlPlane or ensureAuthService.\n    at selfArgv (file:///C:/Users/RUNNER%7E1/AppData/Local/Temp/cotal-smoke-broker-7164-tui-Jiep2H/installation/node_modules/cotal-ai/node_modules/@cotal-ai/cli/dist/lib/self-exec.js:60:15)\n    at startManagerDetached (file:///C:/Users/RUNNER%7E1/AppData/Local/Temp/cotal-smoke-broker-7164-tui-Jiep2H/installation/node_modules/cotal-ai/node_modules/@cotal-ai/cli/dist/lib/manager-proc.js:136:29)\n    at file:///D:/a/Cotal/Cotal/scripts/tui-feasibility/native.mjs:119:13\n    at async Object.record [as case] (file:///C:/Users/RUNNER%7E1/AppData/Local/Temp/cotal-smoke-broker-7164-tui-Jiep2H/installation/node_modules/cotal-ai/dist/tui-host.mjs:19:27)\n    at async runNativeCases (file:///D:/a/Cotal/Cotal/scripts/tui-feasibility/native.mjs:108:3)\n    at async Module.run (file:///C:/Users/RUNNER%7E1/AppData/Local/Temp/cotal-smoke-broker-7164-tui-Jiep2H/installation/node_modules/cotal-ai/dist/tui-host.mjs:66:3)\n    at async file:///D:/a/Cotal/Cotal/scripts/tui-feasibility/entry.mjs:16:3"
+              },
+              "filesystemSnapshotsUnchanged": true,
+              "transientWritesOrChildrenObserved": false,
+              "changedCwdOnlyDuringCall": true,
+              "argvModified": false
+            }
+          },
+          {
+            "id": "native-direct-manager-lifecycle",
+            "status": "passed",
+            "startedAt": "2026-10-30T08:05:18.874Z",
+            "observation": {
+              "outcome": "started-and-stopped",
+              "registration": {
+                "endpoint": "manager",
+                "instanceId": "6fiu9fb88cms9gez63wrfit4yfvx246",
+                "principal": {
+                  "owner": "local",
+                  "actor": "UDDESDTKN7HWXR2FDZ3ZOFZ7QIEG6YYE3LJNRVEAMTXV3MZR6EK6MK4H",
+                  "uid": "n3xdy2j5x7r5u91loea2rtqgcvwnva2"
+                },
+                "epoch": 0
+              },
+              "runtime": "pty",
+              "consoleOrigin": "http://127.0.0.1:53636",
+              "authenticatedInventoryCount": 0,
+              "anonymousStatus": 401,
+              "stoppedListenerClosed": true,
+              "stopIsIdempotent": true,
+              "spawnedSeat": false,
+              "cliOrchestrationExercised": false,
+              "authority": "fresh open-mode broker; no auth callbacks or guard bypass"
+            }
+          },
+          {
+            "id": "installed-native-provider-registry",
+            "status": "passed",
+            "startedAt": "2026-10-30T08:05:20.553Z",
+            "observation": {
+              "nativeManagerRegistrationVisibleToHost": true
+            }
+          },
+          {
+            "id": "protocol-connect",
+            "status": "passed",
+            "startedAt": "2026-10-30T08:05:20.556Z",
+            "observation": {
+              "spaces": [
+                "tui-feas-1dd3ab56",
+                "tui-feas-4b25d251"
+              ]
+            }
+          },
+          {
+            "id": "protocol-independent-cli-who",
+            "status": "passed",
+            "startedAt": "2026-10-30T08:05:20.787Z",
+            "observation": {
+              "observer": "separate Node CLI process; the candidate host never executes CLI",
+              "observations": [
+                {
+                  "code": 0,
+                  "candidateVisible": true,
+                  "outcome": "ok",
+                  "error": null
+                },
+                {
+                  "code": 0,
+                  "candidateVisible": true,
+                  "outcome": "ok",
+                  "error": null
+                }
+              ]
+            }
+          },
+          {
+            "id": "protocol-presence",
+            "status": "passed",
+            "startedAt": "2026-10-30T08:05:24.085Z",
+            "observation": {
+              "observed": 2
+            }
+          },
+          {
+            "id": "protocol-dm-isolation",
+            "status": "passed",
+            "startedAt": "2026-10-30T08:05:24.086Z",
+            "observation": {
+              "delivered": 2,
+              "crossSpaceReceipts": 0
+            }
+          },
+          {
+            "id": "protocol-cross-space-auth",
+            "status": "passed",
+            "startedAt": "2026-10-30T08:05:24.696Z",
+            "observation": {
+              "rejected": 2
+            }
+          },
+          {
+            "id": "protocol-credential-renewal",
+            "status": "passed",
+            "startedAt": "2026-10-30T08:05:24.727Z",
+            "observation": {
+              "delivered": 2,
+              "crossSpaceReceipts": 0
+            }
+          },
+          {
+            "id": "protocol-endpoint-cleanup",
+            "status": "passed",
+            "startedAt": "2026-10-30T08:05:33.438Z",
+            "observation": {
+              "stopped": 6
+            }
+          }
+        ]
+      }
+    },
+    {
+      "mode": "bun",
+      "process": {
+        "code": 1,
+        "signal": null,
+        "stdout": "TUI_FEASIBILITY_RESULT bun 20\n",
+        "stderr": ""
+      },
+      "result": {
+        "sourceHead": "89fabeb305acca5c7d2b34be7b0cc8cf4342bf82",
+        "mode": "bun",
+        "platform": "win32",
+        "arch": "x64",
+        "node": "26.3.0",
+        "bun": "1.4.4",
+        "executable": "C:\\Users\\runneradmin\\.bun\\bin\\bun.exe",
+        "entries": [
+          {
+            "id": "installed-core-workspace-import",
+            "status": "passed",
+            "startedAt": "2026-10-30T08:05:34.961Z",
+            "observation": {
+              "core": "function",
+              "workspace": "function"
+            }
+          },
+          {
+            "id": "installed-extension-single-registry",
+            "status": "failed",
+            "startedAt": "2026-10-30T08:05:34.962Z",
+            "error": {
+              "name": "AssertionError",
+              "message": "Values have same structure but are not reference-equal:\n\nRegistry {}\n",
+              "code": "ERR_ASSERTION",
+              "stack": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\nRegistry {}\n\n    at <anonymous> (C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\cotal-smoke-broker-7164-tui-Jiep2H\\installation\\node_modules\\cotal-ai\\dist\\tui-host.mjs:40:12)\n    at async <anonymous> (C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\cotal-smoke-broker-7164-tui-Jiep2H\\installation\\node_modules\\cotal-ai\\dist\\tui-host.mjs:19:33)\n    at async run (C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\cotal-smoke-broker-7164-tui-Jiep2H\\installation\\node_modules\\cotal-ai\\dist\\tui-host.mjs:38:9)"
+            }
+          },
+          {
+            "id": "offline-machine-records",
+            "status": "passed",
+            "startedAt": "2026-10-30T08:05:34.975Z",
+            "observation": {
+              "registered": 2,
+              "prepared": 1,
+              "damaged": 1,
+              "brokerDialRequired": false,
+              "source": "real workspace registries, deliberately unreachable broker addresses"
+            }
+          },
+          {
+            "id": "opentui-native-offline-frame",
+            "status": "passed",
+            "startedAt": "2026-10-30T08:05:35.083Z",
+            "observation": {
+              "package": "@opentui/core",
+              "version": "0.8.0",
+              "nativeFrame": "Cotal offline feasibility                       \n                                                \n                                                \n                                                \n                                                \n                                                \n",
+              "scope": "native headless renderer; no full TUI, Solid transform or interactive terminal"
+            }
+          },
+          {
+            "id": "native-process-identity",
+            "status": "passed",
+            "startedAt": "2026-10-30T08:05:35.184Z",
+            "observation": {
+              "platform": "win32",
+              "arch": "x64",
+              "identity": {
+                "pid": 3168,
+                "token": "134378211334860065"
+              },
+              "mechanism": "shipped creation.node through defaultStartToken"
+            }
+          },
+          {
+            "id": "native-windows-creation-binding",
+            "status": "passed",
+            "startedAt": "2026-10-30T08:05:35.187Z",
+            "observation": {
+              "platform": "win32",
+              "arch": "x64",
+              "outcome": "loaded",
+              "loader": "packages/workspace/dist/win32-process.js",
+              "binding": "packages/workspace/build/Release/win32-x64/creation.node",
+              "token": "134378211334860065"
+            }
+          },
+          {
+            "id": "native-node-pty-import",
+            "status": "passed",
+            "startedAt": "2026-10-30T08:05:35.187Z",
+            "observation": {
+              "platform": "win32",
+              "arch": "x64",
+              "modulePath": "D:\\a\\Cotal\\Cotal\\node_modules\\.pnpm\\@lydell+node-pty@1.2.0-beta.12\\node_modules\\@lydell\\node-pty\\index.js",
+              "outcome": "imported",
+              "spawnedSeat": false
+            }
+          },
+          {
+            "id": "native-manager-library-import",
+            "status": "passed",
+            "startedAt": "2026-10-30T08:05:35.216Z",
+            "observation": {
+              "outcome": "imported",
+              "path": "implementations/manager/dist/index.js"
+            }
+          },
+          {
+            "id": "native-pty-runtime-construction",
+            "status": "unsupported",
+            "startedAt": "2026-10-30T08:05:35.371Z",
+            "observation": {
+              "outcome": "existing-restriction",
+              "source": "implementations/manager/src/runtime/index.ts",
+              "error": {
+                "name": "Error",
+                "message": "the pty runtime requires Node.js - the manager is running under Bun (v1.4.4), where @lydell/node-pty's spawn-helper hangs before exec and every agent wedges at \"starting…\". Run the manager under node, or install and select an external runtime.",
+                "code": null,
+                "stack": "Error: the pty runtime requires Node.js - the manager is running under Bun (v1.4.4), where @lydell/node-pty's spawn-helper hangs before exec and every agent wedges at \"starting…\". Run the manager under node, or install and select an external runtime.\n    at createBackend (C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\cotal-smoke-broker-7164-tui-Jiep2H\\installation\\node_modules\\cotal-ai\\node_modules\\@cotal-ai\\manager\\dist\\runtime\\index.js:80:23)\n    at createRuntime (C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\cotal-smoke-broker-7164-tui-Jiep2H\\installation\\node_modules\\cotal-ai\\node_modules\\@cotal-ai\\manager\\dist\\runtime\\index.js:71:31)\n    at <anonymous> (D:\\a\\Cotal\\Cotal\\scripts\\tui-feasibility\\native.mjs:84:30)\n    at async <anonymous> (C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\cotal-smoke-broker-7164-tui-Jiep2H\\installation\\node_modules\\cotal-ai\\dist\\tui-host.mjs:19:33)\n    at async runNativeCases (D:\\a\\Cotal\\Cotal\\scripts\\tui-feasibility\\native.mjs:81:13)\n    at async run (C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\cotal-smoke-broker-7164-tui-Jiep2H\\installation\\node_modules\\cotal-ai\\dist\\tui-host.mjs:66:9)"
+              },
+              "spawnedSeat": false
+            }
+          },
+          {
+            "id": "native-process-service-host",
+            "status": "unsupported",
+            "startedAt": "2026-10-30T08:05:35.372Z",
+            "observation": {
+              "platform": "win32",
+              "arch": "x64",
+              "outcome": "existing-restriction",
+              "error": {
+                "name": "CommandFailure",
+                "message": "this process-service driver currently requires Linux machine/boot identity; another platform is not silently treated as Linux",
+                "code": "UNSUPPORTED",
+                "stack": "CommandFailure: this process-service driver currently requires Linux machine/boot identity; another platform is not silently treated as Linux\n    at processServiceHost (C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\cotal-smoke-broker-7164-tui-Jiep2H\\installation\\node_modules\\cotal-ai\\node_modules\\@cotal-ai\\cli\\dist\\lib\\service-instances.js:40:19)\n    at <anonymous> (D:\\a\\Cotal\\Cotal\\scripts\\tui-feasibility\\native.mjs:96:20)\n    at async <anonymous> (C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\cotal-smoke-broker-7164-tui-Jiep2H\\installation\\node_modules\\cotal-ai\\dist\\tui-host.mjs:19:33)\n    at async runNativeCases (D:\\a\\Cotal\\Cotal\\scripts\\tui-feasibility\\native.mjs:93:13)\n    at async run (C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\cotal-smoke-broker-7164-tui-Jiep2H\\installation\\node_modules\\cotal-ai\\dist\\tui-host.mjs:66:9)"
+              }
+            }
+          },
+          {
+            "id": "native-detached-manager-entry-guard",
+            "status": "unsupported",
+            "startedAt": "2026-10-30T08:05:35.384Z",
+            "observation": {
+              "outcome": "existing-restriction",
+              "entry": "D:\\a\\Cotal\\Cotal\\scripts\\tui-feasibility\\entry.mjs",
+              "error": {
+                "name": "Error",
+                "message": "refusing to re-exec this process as `cotal`: it was started from D:\\a\\Cotal\\Cotal\\scripts\\tui-feasibility\\entry.mjs, which is not the CLI's own entry (`bin/cotal.ts` in a checkout, or the `cotal-ai` package's `dist/cotal.js`, directly or through a symlink).\nA child spawned from that entry re-runs it with a cotal subcommand appended, which it does not read; if that file reaches this call on load, every child spawns the next one.\nNEXT: reach this through the `cotal` binary. A fixture that means to start a real daemon points `process.argv[1]` at the cotal entry first; one that does not must not call ensureManager, ensureDelivery, ensureControlPlane or ensureAuthService.",
+                "code": null,
+                "stack": "Error: refusing to re-exec this process as `cotal`: it was started from D:\\a\\Cotal\\Cotal\\scripts\\tui-feasibility\\entry.mjs, which is not the CLI's own entry (`bin/cotal.ts` in a checkout, or the `cotal-ai` package's `dist/cotal.js`, directly or through a symlink).\nA child spawned from that entry re-runs it with a cotal subcommand appended, which it does not read; if that file reaches this call on load, every child spawns the next one.\nNEXT: reach this through the `cotal` binary. A fixture that means to start a real daemon points `process.argv[1]` at the cotal entry first; one that does not must not call ensureManager, ensureDelivery, ensureControlPlane or ensureAuthService.\n    at selfArgv (C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\cotal-smoke-broker-7164-tui-Jiep2H\\installation\\node_modules\\cotal-ai\\node_modules\\@cotal-ai\\cli\\dist\\lib\\self-exec.js:60:19)\n    at startManagerDetached (C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\cotal-smoke-broker-7164-tui-Jiep2H\\installation\\node_modules\\cotal-ai\\node_modules\\@cotal-ai\\cli\\dist\\lib\\manager-proc.js:136:29)\n    at <anonymous> (D:\\a\\Cotal\\Cotal\\scripts\\tui-feasibility\\native.mjs:119:13)\n    at async <anonymous> (C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\cotal-smoke-broker-7164-tui-Jiep2H\\installation\\node_modules\\cotal-ai\\dist\\tui-host.mjs:19:33)\n    at async runNativeCases (D:\\a\\Cotal\\Cotal\\scripts\\tui-feasibility\\native.mjs:108:13)\n    at async run (C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\cotal-smoke-broker-7164-tui-Jiep2H\\installation\\node_modules\\cotal-ai\\dist\\tui-host.mjs:66:9)"
+              },
+              "filesystemSnapshotsUnchanged": true,
+              "transientWritesOrChildrenObserved": false,
+              "changedCwdOnlyDuringCall": true,
+              "argvModified": false
+            }
+          },
+          {
+            "id": "native-direct-manager-lifecycle",
+            "status": "unsupported",
+            "startedAt": "2026-10-30T08:05:35.422Z",
+            "observation": {
+              "outcome": "existing-restriction",
+              "stage": "construction-before-start",
+              "error": {
+                "name": "Error",
+                "message": "the pty runtime requires Node.js - the manager is running under Bun (v1.4.4), where @lydell/node-pty's spawn-helper hangs before exec and every agent wedges at \"starting…\". Run the manager under node, or install and select an external runtime.",
+                "code": null,
+                "stack": "Error: the pty runtime requires Node.js - the manager is running under Bun (v1.4.4), where @lydell/node-pty's spawn-helper hangs before exec and every agent wedges at \"starting…\". Run the manager under node, or install and select an external runtime.\n    at createBackend (C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\cotal-smoke-broker-7164-tui-Jiep2H\\installation\\node_modules\\cotal-ai\\node_modules\\@cotal-ai\\manager\\dist\\runtime\\index.js:80:23)\n    at createRuntime (C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\cotal-smoke-broker-7164-tui-Jiep2H\\installation\\node_modules\\cotal-ai\\node_modules\\@cotal-ai\\manager\\dist\\runtime\\index.js:71:31)\n    at new Manager (C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\cotal-smoke-broker-7164-tui-Jiep2H\\installation\\node_modules\\cotal-ai\\node_modules\\@cotal-ai\\manager\\dist\\manager.js:698:28)\n    at <anonymous> (D:\\a\\Cotal\\Cotal\\scripts\\tui-feasibility\\native.mjs:135:22)\n    at async <anonymous> (C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\cotal-smoke-broker-7164-tui-Jiep2H\\installation\\node_modules\\cotal-ai\\dist\\tui-host.mjs:19:33)\n    at async runNativeCases (D:\\a\\Cotal\\Cotal\\scripts\\tui-feasibility\\native.mjs:128:13)\n    at async run (C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\cotal-smoke-broker-7164-tui-Jiep2H\\installation\\node_modules\\cotal-ai\\dist\\tui-host.mjs:66:9)"
+              },
+              "directStartAttempted": false,
+              "spawnedSeat": false,
+              "cliOrchestrationExercised": false
+            }
+          },
+          {
+            "id": "installed-native-provider-registry",
+            "status": "failed",
+            "startedAt": "2026-10-30T08:05:35.425Z",
+            "error": {
+              "name": "Error",
+              "message": "no local-process registered for \"manager-service\"",
+              "code": null,
+              "stack": "Error: no local-process registered for \"manager-service\"\n    at resolve (C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\cotal-smoke-broker-7164-tui-Jiep2H\\installation\\node_modules\\cotal-ai\\node_modules\\@cotal-ai\\core\\dist\\registry.js:98:23)\n    at <anonymous> (C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\cotal-smoke-broker-7164-tui-Jiep2H\\installation\\node_modules\\cotal-ai\\dist\\tui-host.mjs:68:32)\n    at <anonymous> (C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\cotal-smoke-broker-7164-tui-Jiep2H\\installation\\node_modules\\cotal-ai\\dist\\tui-host.mjs:19:33)\n    at run (C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\cotal-smoke-broker-7164-tui-Jiep2H\\installation\\node_modules\\cotal-ai\\dist\\tui-host.mjs:67:9)"
+            }
+          },
+          {
+            "id": "protocol-connect",
+            "status": "passed",
+            "startedAt": "2026-10-30T08:05:35.431Z",
+            "observation": {
+              "spaces": [
+                "tui-feas-1dd3ab56",
+                "tui-feas-4b25d251"
+              ]
+            }
+          },
+          {
+            "id": "protocol-independent-cli-who",
+            "status": "passed",
+            "startedAt": "2026-10-30T08:05:35.630Z",
+            "observation": {
+              "observer": "separate Node CLI process; the candidate host never executes CLI",
+              "observations": [
+                {
+                  "code": 0,
+                  "candidateVisible": true,
+                  "outcome": "ok",
+                  "error": null
+                },
+                {
+                  "code": 0,
+                  "candidateVisible": true,
+                  "outcome": "ok",
+                  "error": null
+                }
+              ]
+            }
+          },
+          {
+            "id": "protocol-presence",
+            "status": "passed",
+            "startedAt": "2026-10-30T08:05:38.952Z",
+            "observation": {
+              "observed": 2
+            }
+          },
+          {
+            "id": "protocol-dm-isolation",
+            "status": "passed",
+            "startedAt": "2026-10-30T08:05:38.953Z",
+            "observation": {
+              "delivered": 2,
+              "crossSpaceReceipts": 0
+            }
+          },
+          {
+            "id": "protocol-cross-space-auth",
+            "status": "passed",
+            "startedAt": "2026-10-30T08:05:39.560Z",
+            "observation": {
+              "rejected": 2
+            }
+          },
+          {
+            "id": "protocol-credential-renewal",
+            "status": "passed",
+            "startedAt": "2026-10-30T08:05:39.583Z",
+            "observation": {
+              "delivered": 2,
+              "crossSpaceReceipts": 0
+            }
+          },
+          {
+            "id": "protocol-endpoint-cleanup",
+            "status": "passed",
+            "startedAt": "2026-10-30T08:05:48.248Z",
+            "observation": {
+              "stopped": 6
+            }
+          }
+        ]
+      }
+    },
+    {
+      "mode": "compiled",
+      "process": {
+        "code": 1,
+        "signal": null,
+        "stdout": "",
+        "stderr": "import-installed-host: Cannot find package '@cotal-ai/core' imported from C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\cotal-smoke-broker-7164-tui-Jiep2H\\installation\\node_modules\\cotal-ai\\dist\\tui-host.mjs\n"
+      },
+      "result": {
+        "sourceHead": "89fabeb305acca5c7d2b34be7b0cc8cf4342bf82",
+        "mode": "compiled",
+        "platform": "win32",
+        "arch": "x64",
+        "node": "26.3.0",
+        "bun": "1.4.4",
+        "executable": "C:\\Users\\runneradmin\\AppData\\Local\\Temp\\cotal-smoke-broker-7164-tui-Jiep2H\\installation\\node_modules\\@cotal-ai\\tui-win32-x64\\bin\\cotal-proof.exe",
+        "entries": [
+          {
+            "id": "installed-host-bootstrap",
+            "status": "failed",
+            "stage": "import-installed-host",
+            "error": {
+              "name": "ResolveMessage",
+              "message": "Cannot find package '@cotal-ai/core' imported from C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\cotal-smoke-broker-7164-tui-Jiep2H\\installation\\node_modules\\cotal-ai\\dist\\tui-host.mjs",
+              "code": "ERR_MODULE_NOT_FOUND",
+              "stack": "ResolveMessage: Cannot find package '@cotal-ai/core' imported from C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\cotal-smoke-broker-7164-tui-Jiep2H\\installation\\node_modules\\cotal-ai\\dist\\tui-host.mjs"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "errors": [],
+  "cleanup": {
+    "launchesFenced": true,
+    "probeChildren": 0,
+    "brokers": [
+      {
+        "pid": 4928,
+        "exitCode": null,
+        "signalCode": "SIGTERM"
+      },
+      {
+        "pid": 3088,
+        "exitCode": null,
+        "signalCode": "SIGTERM"
+      },
+      {
+        "pid": 1540,
+        "exitCode": null,
+        "signalCode": "SIGTERM"
+      }
+    ],
+    "allBrokerHandlesExited": true,
+    "scratchRemoved": true
+  },
+  "installation": {
+    "layout": "physical Cotal package files with linked locked third-party dependencies",
+    "coldNpmInstall": false
+  },
+  "compile": {
+    "code": 0,
+    "signal": null,
+    "stdout": "  [51ms]  bundle  23 modules\n[1253ms] compile  C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\cotal-smoke-broker-7164-tui-Jiep2H\\installation\\node_modules\\@cotal-ai\\tui-win32-x64\\bin\\cotal-proof.exe\n",
+    "stderr": ""
+  },
+  "compiledSha256": "7057eedc74233f85c593da111480ea3b17978a9a33ff26367bc67aa427341073",
+  "finishedAt": "2026-10-30T08:05:49.083Z"
+}

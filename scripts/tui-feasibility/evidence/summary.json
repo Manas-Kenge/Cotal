@@ -1,0 +1,112 @@
+{
+  "comparisonSource": "89fabeb305acca5c7d2b34be7b0cc8cf4342bf82",
+  "workflowRun": "https://github.com/Manas-Kenge/Cotal/actions/runs/41023604288",
+  "gate": "blocked",
+  "targets": [
+    {
+      "target": "linux",
+      "platform": "linux",
+      "arch": "x64",
+      "node": "v22.23.4",
+      "modes": [
+        {
+          "mode": "node",
+          "statuses": {
+            "passed": 17,
+            "failed": 1,
+            "unsupported": 1,
+            "not-applicable": 1
+          }
+        },
+        {
+          "mode": "bun",
+          "statuses": {
+            "passed": 16,
+            "failed": 0,
+            "unsupported": 3,
+            "not-applicable": 1
+          }
+        },
+        {
+          "mode": "compiled",
+          "statuses": {
+            "passed": 0,
+            "failed": 1,
+            "unsupported": 0,
+            "not-applicable": 0
+          }
+        }
+      ]
+    },
+    {
+      "target": "macos",
+      "platform": "darwin",
+      "arch": "arm64",
+      "node": "v22.23.4",
+      "modes": [
+        {
+          "mode": "node",
+          "statuses": {
+            "passed": 16,
+            "failed": 1,
+            "unsupported": 2,
+            "not-applicable": 1
+          }
+        },
+        {
+          "mode": "bun",
+          "statuses": {
+            "passed": 15,
+            "failed": 0,
+            "unsupported": 4,
+            "not-applicable": 1
+          }
+        },
+        {
+          "mode": "compiled",
+          "statuses": {
+            "passed": 0,
+            "failed": 1,
+            "unsupported": 0,
+            "not-applicable": 0
+          }
+        }
+      ]
+    },
+    {
+      "target": "windows",
+      "platform": "win32",
+      "arch": "x64",
+      "node": "v22.23.4",
+      "modes": [
+        {
+          "mode": "node",
+          "statuses": {
+            "passed": 17,
+            "failed": 1,
+            "unsupported": 2,
+            "not-applicable": 0
+          }
+        },
+        {
+          "mode": "bun",
+          "statuses": {
+            "passed": 14,
+            "failed": 2,
+            "unsupported": 4,
+            "not-applicable": 0
+          }
+        },
+        {
+          "mode": "compiled",
+          "statuses": {
+            "passed": 0,
+            "failed": 1,
+            "unsupported": 0,
+            "not-applicable": 0
+          }
+        }
+      ]
+    }
+  ]
+}

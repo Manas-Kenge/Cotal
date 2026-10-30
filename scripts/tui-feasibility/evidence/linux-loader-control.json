@@ -1,0 +1,113 @@
+{
+  "platform": "linux",
+  "arch": "x64",
+  "records": [
+    {
+      "kind": "direct",
+      "runtime": "/home/manas/.local/share/mise/installs/node/26.7.0/bin/node",
+      "run": {
+        "code": 0,
+        "signal": null,
+        "stdout": "17\n",
+        "stderr": "",
+        "error": null
+      }
+    },
+    {
+      "kind": "direct",
+      "runtime": "bun",
+      "run": {
+        "code": 0,
+        "signal": null,
+        "stdout": "17\n",
+        "stderr": "",
+        "error": null
+      }
+    },
+    {
+      "kind": "compiled",
+      "name": "default",
+      "flags": [],
+      "compile": {
+        "code": 0,
+        "signal": null,
+        "stdout": "   [4ms]  bundle  1 modules\n [188ms] compile  /tmp/ctfl-7nX2q9/default\n",
+        "stderr": "",
+        "error": null
+      },
+      "run": {
+        "code": 0,
+        "signal": null,
+        "stdout": "17\n",
+        "stderr": "",
+        "error": null
+      }
+    },
+    {
+      "kind": "compiled",
+      "name": "external",
+      "flags": [
+        "--external",
+        "@probe/dependency"
+      ],
+      "compile": {
+        "code": 0,
+        "signal": null,
+        "stdout": "   [3ms]  bundle  1 modules\n [180ms] compile  /tmp/ctfl-7nX2q9/external\n",
+        "stderr": "",
+        "error": null
+      },
+      "run": {
+        "code": 0,
+        "signal": null,
+        "stdout": "17\n",
+        "stderr": "",
+        "error": null
+      }
+    },
+    {
+      "kind": "compiled",
+      "name": "autoload",
+      "flags": [
+        "--compile-autoload-package-json"
+      ],
+      "compile": {
+        "code": 0,
+        "signal": null,
+        "stdout": "   [4ms]  bundle  1 modules\n [174ms] compile  /tmp/ctfl-7nX2q9/autoload\n",
+        "stderr": "",
+        "error": null
+      },
+      "run": {
+        "code": 0,
+        "signal": null,
+        "stdout": "17\n",
+        "stderr": "",
+        "error": null
+      }
+    },
+    {
+      "kind": "compiled",
+      "name": "external-autoload",
+      "flags": [
+        "--external",
+        "@probe/dependency",
+        "--compile-autoload-package-json"
+      ],
+      "compile": {
+        "code": 0,
+        "signal": null,
+        "stdout": "   [4ms]  bundle  1 modules\n [177ms] compile  /tmp/ctfl-7nX2q9/external-autoload\n",
+        "stderr": "",
+        "error": null
+      },
+      "run": {
+        "code": 0,
+        "signal": null,
+        "stdout": "17\n",
+        "stderr": "",
+        "error": null
+      }
+    }
+  ]
+}

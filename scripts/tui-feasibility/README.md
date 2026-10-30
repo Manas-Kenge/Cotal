@@ -2,6 +2,8 @@
 
 This disposable proof compares the current Cotal libraries under Node, Bun 1.4.4 and a Bun-compiled bootstrap. It implements no app screens, shared-operation extraction or launcher remedy. It never changes bare cotal.
 
+Read [REPORT.md](REPORT.md) for the completed comparison, blockers and recommended remedies. Exact retained results are in [evidence/summary.json](evidence/summary.json).
+
 ## Run the proof
 
 Use Node 22 or later, Bun 1.4.4, pnpm 11.28.2 and nats-server 2.12.12. Build the source first. Windows also needs the source-matched workspace creation.node binding built through the existing workspace-native workflow.

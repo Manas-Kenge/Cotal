@@ -1,6 +1,6 @@
 # TUI feasibility platforms
 
-This probe compares the current Cotal CLI under Node 22, Bun 1.4.4, and a Bun-compiled executable.
+This probe compares the current Cotal libraries under Node 22, Bun 1.4.4, and a Bun-compiled executable.
 It also probes the minimum OpenTUI native dependency.
 It does not establish support for a complete TUI or change Cotal's entry point.
 
