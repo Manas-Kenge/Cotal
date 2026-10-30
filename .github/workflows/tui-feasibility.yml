@@ -1,0 +1,115 @@
+name: TUI feasibility proof on probe push
+
+on:
+  push:
+    branches:
+      - probe/tui-feasibility-*
+
+permissions:
+  contents: read
+
+jobs:
+  workspace-native:
+    uses: ./.github/workflows/workspace-native.yml
+    with:
+      architectures: '["x64"]'
+
+  proof:
+    name: TUI proof / ${{ matrix.runner }}
+    needs: workspace-native
+    if: always()
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        runner: [ubuntu-latest, macos-latest, windows-latest]
+    defaults:
+      run:
+        shell: bash
+    env:
+      GOBIN: ${{ runner.temp }}/tui-feasibility-bin
+      GOPROXY: https://proxy.golang.org
+      GOSUMDB: sum.golang.org
+      GOTOOLCHAIN: local
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: pnpm/action-setup@v6.0.8
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+      - name: Record runner and source
+        run: |
+          mkdir -p tui-feasibility-proof
+          node --input-type=module <<'NODE'
+          import { writeFileSync } from 'node:fs';
+          import { release } from 'node:os';
+          const record = {
+            source: process.env.GITHUB_SHA,
+            run: process.env.GITHUB_RUN_ID,
+            attempt: process.env.GITHUB_RUN_ATTEMPT,
+            runner: process.env.RUNNER_OS,
+            runnerArch: process.env.RUNNER_ARCH,
+            image: process.env.ImageOS,
+            imageVersion: process.env.ImageVersion,
+            platform: process.platform,
+            arch: process.arch,
+            osRelease: release(),
+            node: process.version,
+            workspaceNative: '${{ needs.workspace-native.result }}',
+          };
+          writeFileSync('tui-feasibility-proof/environment.json', JSON.stringify(record, null, 2) + '\n');
+          NODE
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: '1.4.4'
+      - uses: actions/setup-go@v7
+        with:
+          go-version: '1.25.11'
+          cache: false
+      - name: Record toolchain versions
+        run: |
+          {
+            node --version
+            pnpm --version
+            bun --version
+            bun --revision
+            go version
+          } 2>&1 | tee tui-feasibility-proof/toolchain.log
+      - name: Copy source-matched Windows native identity binding
+        if: runner.os == 'Windows'
+        uses: actions/download-artifact@v4
+        with:
+          name: workspace-native-x64
+          path: packages/workspace/build/Release/win32-x64
+      - name: Install locked proof dependencies
+        run: |
+          pnpm install --frozen-lockfile --ignore-scripts --filter 'cotal-ai...' --filter @cotal-ai/smoke-kit --filter cotal-monorepo 2>&1 | tee tui-feasibility-proof/install.log
+      - name: Build current Cotal baseline
+        run: |
+          pnpm --filter 'cotal-ai...' build 2>&1 | tee tui-feasibility-proof/build.log
+      - name: Install the pinned minimal renderer probe
+        run: |
+          npm ci --prefix scripts/tui-feasibility/renderer --ignore-scripts --no-audit --no-fund 2>&1 | tee tui-feasibility-proof/renderer-install.log
+      - name: Build checksum-verified NATS server module
+        run: |
+          go install github.com/nats-io/nats-server/v2@v2.12.12 2>&1 | tee tui-feasibility-proof/nats-install.log
+          node --input-type=module <<'NODE'
+          import { appendFileSync } from 'node:fs';
+          appendFileSync(process.env.GITHUB_PATH, process.env.GOBIN + '\n');
+          NODE
+      - name: Record broker version
+        run: nats-server --version 2>&1 | tee tui-feasibility-proof/nats-version.log
+      - name: Run Node, Bun, and compiled Bun feasibility cases
+        run: |
+          node --import tsx scripts/tui-feasibility/run.mjs --output tui-feasibility-proof/results 2>&1 | tee tui-feasibility-proof/run.log
+      - name: Preserve proof and preparation logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tui-feasibility-${{ matrix.runner }}-${{ github.run_attempt }}
+          path: tui-feasibility-proof
+          if-no-files-found: error
+          retention-days: 14

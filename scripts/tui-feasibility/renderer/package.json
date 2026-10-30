@@ -1,0 +1,8 @@
+{
+  "name": "cotal-tui-native-renderer-probe",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@opentui/core": "0.8.0"
+  }
+}
