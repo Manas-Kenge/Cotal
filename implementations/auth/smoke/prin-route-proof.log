@@ -1,0 +1,104 @@
+smoke broker: nats-server 2.15.1 at /home/manas/.local/share/mise/installs/nats-server/2.15.1/nats-server
+broker hub :33637, space prin6ea8eb53, 10 credentials
+  alice.coder: pub 45 allow / 9 deny, sub 7 allow / 0 deny
+  alice.helper: pub 45 allow / 9 deny, sub 7 allow / 0 deny
+  alice.web: pub 49 allow / 9 deny, sub 8 allow / 0 deny
+  bob.web: pub 49 allow / 9 deny, sub 8 allow / 0 deny
+  bob.builder: pub 49 allow / 9 deny, sub 8 allow / 0 deny
+  alice.coder(next lifecycle): pub 45 allow / 9 deny, sub 7 allow / 0 deny
+  bob.console(admin view): pub 77 allow / 0 deny, sub 5 allow / 0 deny
+  alice.ops(manager-caller view): pub 8 allow / 0 deny, sub 2 allow / 0 deny
+  alice.obs(observer): pub 63 allow / 0 deny, sub 3 allow / 0 deny
+  org.example.svc(service serve credential): pub 5 allow / 0 deny, sub 14 allow / 0 deny
+  ✓ every serving credential subscribed its own runtime subject without a violation
+
+cell 1: owner's interactive session calls its own agent
+    describe: reply(owner) 22ms
+    prompts: reply(owner) 23ms
+    prompt: reply(owner) 23ms
+    prompt-answer: reply(owner) 25ms
+  ✓ cell 1: 4/4 commands answered on the derived prin-reply subject, authority owner
+  ✓ cell 1: the agent received exactly 4 requests (4)
+
+cell 2: a managed agent publishes a request addressed to itself
+  ✓ cell 2: 2/2 self-addressed publishes (owner, grant) refused by the broker
+  ✓ cell 2: the agent received none
+
+cell 4: a sibling agent of the same owner calls
+  ✓ cell 4: 2/2 sibling publishes refused
+  ✓ cell 4: the agent received none
+
+cell 5: a sibling agent subscribes the agent's request subject
+  ✓ cell 5: 4/4 sibling subscriptions refused
+
+cell 6: another owner's interactive session calls
+  ✓ cell 6: 4/4 publishes by bob.web refused
+  ✓ cell 6: the agent received none
+
+cell 7: admin, observer, manager-caller view and a service credential
+    bob.console(admin view): 3/3 publishes refused, 3/3 subscriptions refused
+    alice.obs(observer): 3/3 publishes refused, 3/3 subscriptions refused
+    alice.ops(manager-caller view): 3/3 publishes refused, 3/3 subscriptions refused
+    org.example.svc(service serve credential): 3/3 publishes refused, 3/3 subscriptions refused
+  ✓ cell 7: 12/12 publishes and 12/12 subscriptions refused across 4 credentials
+  ✓ cell 7: the agent received none
+
+cell 8: a caller publishes with another caller's tokens in the tail
+  ✓ cell 8: 3/3 forged-tail publishes refused (other owner, other actor, other uid)
+  ✓ cell 8: the agent received none
+
+cell 10: the agent publishes a reply under another principal's head
+  ✓ cell 10: 4/4 foreign-head replies refused (sibling, own later lifecycle, other owner, other endpoint)
+
+cell 11: a caller subscribes another caller's reply subject
+  ✓ cell 11: 4/4 foreign reply subscriptions refused
+
+cell 12 + observation 1: a request names a runtime id nobody serves
+    503 on prin-reply._nr._nr._nr._nr 1ms
+  ✓ cell 12: no-responders, never a reply
+  ✓ observation 1: the 503 arrived on the caller's sentinel subject through the wildcard-head subscription
+  ✓ cell 12: the agent received none
+
+cell 13 + observation 2: a serving credential publishes on the sentinel subject
+  ✓ observation 2: 3/3 sentinel publishes refused (agent forging a 503, a grantee on its own sentinel, an interactive session on its own)
+
+cell 14: a serving agent runs a request and tries to make the caller see no-responders
+    deadline 2007ms
+  ✓ cell 14: the agent received the request and its forged 503 was refused
+  ✓ cell 14: the caller saw a deadline, never no-responders
+
+cell 15: a credential from another lifecycle of the agent subscribes this uid
+  ✓ cell 15: 3/3 subscriptions by the later lifecycle refused
+  ✓ cell 15 control: the later lifecycle subscribes its own uid
+
+cell 16: a hand-built grant row for one agent lifecycle calls that agent
+    describe: reply(grant) 21ms
+    prompts: reply(grant) 21ms
+    prompt: reply(grant) 21ms
+    prompt-answer: reply(grant) 21ms
+  ✓ cell 16: 4/4 commands answered, by.authority grant
+  ✓ cell 16: the agent received exactly 4 requests (4)
+
+cell 17: the same grant row calls another agent of that owner, or a later lifecycle
+  ✓ cell 17: 3/3 grant publishes off the named lifecycle refused (sibling, later lifecycle, other owner)
+  ✓ cell 17: neither the sibling nor the later lifecycle received anything
+
+cell 22: an owner caller sends the grant word, and the reverse
+  ✓ cell 22: 4/4 wrong-word publishes refused
+  ✓ cell 22: the agent received none
+
+observation 3: a responder that is gone behind remote interest
+smoke broker: nats-server 2.15.1 at /home/manas/.local/share/mise/installs/nats-server/2.15.1/nats-server
+    responder on the leaf, link up: reply(owner) 21ms
+  ✓ observation 3 control: a responder behind the leaf link answers a hub caller
+    leaf server frozen (SIGSTOP), its interest still held by the hub: deadline 3012ms
+  ✓ observation 3: gone behind remote interest gives a timeout, not a 503
+    responder closed cleanly, its unsubscribe propagated over the link: 503 on prin-reply._nr._nr._nr._nr 1ms
+  ✓ observation 3 contrast: once the leaf withdraws the interest, the hub answers 503 again
+
+observation 4: waiting for the held reply (125s hold)
+    reply(owner) 125007ms, 125s after the request
+  ✓ observation 4: a reply published more than two minutes after the request is accepted on the static row
+
+refusals the broker reported: 61 across 11 credentials
+COTAL_SMOKE_SENTINEL cells=34 passed=34 failed=0
